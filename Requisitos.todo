@@ -1,0 +1,43 @@
+Aplicación:
+  ☐ Presenta autenticación y autoriza a los usuarios según su privilegio
+    ☐ Autenticación
+    ☐ Autorización
+  --- ✄ -----------------------
+  ☐ Permite insertar, consultar, modificar y eliminar en todos los módulos
+    ☐ Insertar
+    ☐ Consultar
+    ☐ Modificar
+    ☐ Eliminar
+  --- ✄ -----------------------
+  ☐ Valida los campos de los formularios del lado cliente y servidor
+    ☐ Validación desde el cliente
+    ☐ Validación desde el servidor
+  --- ✄ -----------------------
+  ☐ Genera reportes en PDF y estadísticas con gráficas según rango de fecha
+    ☐ Reportes en PDF
+    ☐ Gráficos estadísticos
+  --- ✄ -----------------------
+  ☐ El sistema contiene rutinas de transacción seguras
+  --- ✄ -----------------------
+  ☐ Permite llevar registros del log de usuarios y triggers del sistema
+    ☐ Guardar logs de usuarios
+    ☐ Guardar triggers de la aplicación
+  --- ✄ -----------------------
+  ☐ Permite respaldar para su descarga y restaurar la base de datos seleccionando una copia guardada en unidad extraíble
+    ☐ Respaldo de BD
+    ☐ Restauración de BD por archivo de entrada
+  --- ✄ -----------------------
+  ☐ Evita ataque XSS
+    ☐ Sanitizar entrada de datos
+    ☐ Garantizar la protección de un ataque simulado
+  --- ✄ -----------------------
+  ☐ El sistema genera mensajes de alerta de forma automatizada dependiendo de cálculos realizados en base de datos
+  --- ✄ -----------------------
+  ☐ Las interfaces son de fácil comprensión al usuario, utilizando calendarios, menú desplegables y mantiene el estilo en los distintos módulos del sistema
+    ☐ Hacer tests de UX
+    ☐ Guardar y presentar gráficamente estadísticas
+    ☐ Hacer un tutorial de uso básico de la aplicación
+  --- ✄ -----------------------
+
+Proyecto:
+  ☐ ... tareas pendientes

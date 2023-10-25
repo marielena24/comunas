@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "Comunas"
+		}
+	],
+	"build_systems": [
+		{
+			"name": "Lint",
+			"shell_cmd": "composer lint"
+		},
+		{
+			"name": "Lint - Save errors",
+			"shell_cmd": "composer lint:save"
+		}
+	]
+}

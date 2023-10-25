@@ -1,0 +1,13 @@
+{
+	"require-dev": {
+		"phpstan/phpstan": "^1.10"
+	},
+	"scripts": {
+		"lint": "phpstan -cphpstan.neon --no-progress",
+		"lint:save": "phpstan -cphpstan.neon --no-progress --generate-baseline=logs/phpstan-errors.neon",
+		"post-install-cmd": [
+			"php -r \"if (!file_exists('.env.php')) copy('.env.example.php', '.env.php');\""
+		],
+		"dev": "start php -S localhost:3000"
+	}
+}

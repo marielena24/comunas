@@ -1,0 +1,5 @@
+vendor
+composer.lock
+comunas.sublime-workspace
+.env.php
+*.log

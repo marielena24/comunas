@@ -1,0 +1,18 @@
+includes:
+  - vendor/phpstan/phpstan/conf/bleedingEdge.neon
+  - logs/phpstan-errors.neon
+parameters:
+  phpVersion: 80211
+  level: 0
+  paths:
+    - conexion
+    - panel
+    - index.php
+    - registro_usuario.php
+    - validar.php
+  excludePaths:
+    - vendor
+    - css
+    - docs
+    - img
+    - logs

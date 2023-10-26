@@ -3,3 +3,5 @@ composer.lock
 comunas.sublime-workspace
 .env.php
 *.log
+node_modules
+package-lock.json

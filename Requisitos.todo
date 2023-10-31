@@ -1,6 +1,6 @@
 Aplicación:
   ☐ Presenta autenticación y autoriza a los usuarios según su privilegio
-    ☐ Autenticación
+    ✔ Autenticación @done (23-10-30 23:45)
     ☐ Autorización
   --- ✄ -----------------------
   ☐ Permite insertar, consultar, modificar y eliminar en todos los módulos

@@ -18,8 +18,8 @@
 	"settings": {
 		"LSP": {
 			"formatters": {
-				"embedding.php": "LSP-html",
 				"source.css": "LSP-stylelint",
+				"embedding.php": "LSP-intelephense",
 			},
 			"LSP-tailwindcss": {
 				"enabled": false,

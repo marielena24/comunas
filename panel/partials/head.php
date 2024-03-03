@@ -1,9 +1,7 @@
 <?php
-	session_start();
+	require_once __DIR__ . '/../../app/SessionMiddleware.php';
 
-	if (!isset($_SESSION['usuario'])) {
-		header('Location: ../');
-	}
+	SessionMiddleware::aseguraQueElUsuarioEstaAutenticado();
 ?>
 
 <!DOCTYPE html>

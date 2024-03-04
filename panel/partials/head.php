@@ -12,7 +12,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Inicio - Consejo Comunal "Las Casitas"</title>
     <link rel="stylesheet" href="../css/w3.css" />
-		<link rel="stylesheet" href="../css/estilos.css" />
+		<link rel="stylesheet" href="../css/main.css" />
 		<link rel="icon" href="../img/favicon.png" />
 	</head>
 

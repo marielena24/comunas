@@ -1,61 +1,52 @@
 <?php
-include('menu.php');
-include('../conexion/cone.php');
 
- @$boton = $_POST['btn'];
- if(isset($boton))
- {
-   $cedula = $_POST['ci'];
+include_once __DIR__ . '/partials/head.php';
+require_once __DIR__ . '/../conexion/cone.php';
+require_once __DIR__ . '/../app/StrUtils.php';
 
-   $sql = "SELECT * FROM jefe_de_familia WHERE ci = $cedula " ;
-   $result = $conexion->query($sql);
+@$boton = $_POST['btn'];
+$jefe = [];
 
+if (isset($boton)) {
+  $cedula = $_POST['ci'];
 
-   if($result == TRUE)
-     {
+  $result = $conexion->query("SELECT * FROM jefe_de_familia WHERE ci = $cedula");
 
-      echo '<script>alert("DATOS INSERTADOS CORRECTAMENTE")</script> ';
+  if ($result->num_rows === 1) {
+    $jefe = $result->fetch_assoc();
+  } else {
+    $result = $conexion->query("SELECT * FROM carga_familiar WHERE ci = $cedula");
 
-    echo "<script>location.href='constula_individual.php'</script>";
-
-
-      //  echo "datos insertados correctamente : ";
-      //  echo "<a href='index.php'>Volver al inicio</a>";
-     }
-     else
-     {
-
-      echo '<script>alert("OCURRIO UN ERROR")</script> ';
-
-      echo "<script>location.href='constula_individual.php'</script>";
-
-
-      // echo "ocurrio un error";
-     }
-
+    if ($result->num_rows === 1) {
+      $jefe = $result->fetch_assoc();
+    } else {
+      $jefe = null;
+    }
   }
+}
+
 ?>
-<link rel="stylesheet" href="css/estilos.css">
- <body>
- <h2>Bienvenidos</h2>
 
- <div class="contenedor">
-    <h3 align="center">consulta individual</h3>
-    <form method="POST" action="consulta_individual.php">
+<main class="contenedor">
+  <h3 class="w3-center">Consulta Individual</h3>
+  <form method="POST">
+    <label for="ci" class="w3-block">Cedula:</label>
+    <input type="number" id="ci" name="ci" required min="0" />
+    <input type="submit" name="btn" value="Enviar" />
+  </form>
 
-          Cedula: <br />
-          <input type="text" name="ci" required size="50" />  
-
-          <input type="submit" name="btn" value="Enviar"  />
-          
-    </form>
- </div>
-
- </body>
-
-
-
-
-
-
-
+  <?php if (count($jefe) > 0) : ?>
+    <dl>
+      <dt>Nombre completo:</dt>
+      <dd><?= StrUtils::iniciales($jefe['nombre'] . ' ' . $jefe['apellido']) ?></dd>
+      <dt>Cédula:</dt>
+      <dd><?= $jefe['ci'] ?></dd>
+      <dt>Teléfono:</dt>
+      <dd><?= $jefe['tlf'] ?></dd>
+      <dt>Parentesco:</dt>
+      <dd><?= StrUtils::iniciales($jefe['parentesco']) ?></dd>
+    </dl>
+  <?php elseif ($jefe === null) : ?>
+    <p class="w3-panel w3-round-large w3-padding-large">Habitante de cédula <?= $cedula ?> no encontrado.</p>
+  <?php endif ?>
+</main>

@@ -18,4 +18,10 @@ class SessionMiddleware {
       exit;
     }
   }
+
+  static function esAdministrador(): bool {
+    @session_start();
+
+    return $_SESSION['id_rol'] === '1';
+  }
 }

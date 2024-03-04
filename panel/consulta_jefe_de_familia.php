@@ -22,7 +22,9 @@ $result = $conexion->query("SELECT * FROM jefe_de_familia");
       <th>Nivel de instrucción</th>
       <th>Profesión</th>
       <th>Parentesco</th>
-      <th>Acciones</th>
+      <?php if (SessionMiddleware::esAdministrador()): ?>
+        <th>Acciones</th>
+      <?php endif ?>
     </tr>
     <?php while ($row = $result->fetch_assoc()) : ?>
       <tr>
@@ -37,14 +39,16 @@ $result = $conexion->query("SELECT * FROM jefe_de_familia");
         <td><?= mb_convert_case($row['instrucción'], MB_CASE_TITLE) ?></td>
         <td><?= mb_convert_case($row['profesion'], MB_CASE_TITLE) ?></td>
         <td><?= mb_convert_case($row['parentesco'], MB_CASE_TITLE) ?></td>
-        <td>
-          <a class="w3-button w3-red w3-block" href="eliminar_jefe_de_familia.php?id=<?= $row['id'] ?>">
-            Borrar
-          </a>
-          <a class="w3-button w3-gray w3-block" href="editar_jefe_de_familia.php?id=<?= $row['id'] ?>">
-            Editar
-          </a>
-        </td>
+        <?php if (SessionMiddleware::esAdministrador()): ?>
+          <td>
+            <a class="w3-button w3-red w3-block" href="eliminar_jefe_de_familia.php?id=<?= $row['id'] ?>">
+              Borrar
+            </a>
+            <a class="w3-button w3-gray w3-block" href="editar_jefe_de_familia.php?id=<?= $row['id'] ?>">
+              Editar
+            </a>
+          </td>
+        <?php endif ?>
       </tr>
     <?php endwhile ?>
   </table>

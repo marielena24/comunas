@@ -1,5 +1,5 @@
 const CenterNotySuccess = Swal.mixin({
-  iconHtml: '✔',
+  // iconHtml: '✔',
   icon: 'success',
   confirmButtonText: 'Cerrar',
   timerProgressBar: true,
@@ -7,7 +7,7 @@ const CenterNotySuccess = Swal.mixin({
 })
 
 const CenterNotyError = Swal.mixin({
-  iconHtml: '❌',
+  // iconHtml: '❌',
   icon: 'error',
   confirmButtonText: 'Cerrar',
   timerProgressBar: true,

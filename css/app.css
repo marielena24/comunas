@@ -19,11 +19,12 @@ body {
   width: 350px;
   height: 455px;
   position: relative;
-  margin: 6% auto;
-  background: #fff;
+  margin: 2em auto 0;
+  background: white;
   padding: 5px;
   border-radius: 10px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .button-box {

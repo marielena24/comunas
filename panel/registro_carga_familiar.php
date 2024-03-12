@@ -4,8 +4,9 @@ require_once __DIR__ . '/../app/SessionMiddleware.php';
 
 SessionMiddleware::aseguraQueElUsuarioEstaAutorizado();
 
-include('menu.php');
-include('../conexion/cone.php');
+include_once __DIR__ . '/partials/head.php';
+require_once __DIR__ . '/../conexion/cone.php';
+require_once __DIR__ . '/../app/StrUtils.php';
 
  @$boton = $_POST['btn'];
  if(isset($boton))

@@ -1,8 +1,8 @@
 <?php
 
-include('menu.php');
-include('../conexion/cone.php');
-
+include_once __DIR__ . '/partials/head.php';
+require_once __DIR__ . '/../conexion/cone.php';
+require_once __DIR__ . '/../app/StrUtils.php';
   $id = $_GET['id'];
 
   $sql = "SELECT * FROM carga_familiar WHERE id = '".$id."'";
@@ -35,7 +35,7 @@ include('../conexion/cone.php');
  
        echo '<script>alert("DATOS INSERTADOS CORRECTAMENTE")</script> ';
  
-     echo "<script>location.href='index.php'</script>";
+     echo "<script>location.href='consulta_carga_familiar.php'</script>";
  
  
  
@@ -64,7 +64,7 @@ include('../conexion/cone.php');
 
  <div class="contenedor">
     <h3 align="center">Actualizar Carga Familia</h3>
-    <form >
+    <form method="POST">
           Nombre: <br />
           <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
           <input type="text" name="nombre" value="<?php echo $row['nombre']; ?>" required size="50" />

@@ -4,8 +4,9 @@ require_once __DIR__ . '/../app/SessionMiddleware.php';
 
 SessionMiddleware::aseguraQueElUsuarioEstaAutorizado();
 
-include('menu.php');
-include('../conexion/cone.php');
+include_once __DIR__ . '/partials/head.php';
+require_once __DIR__ . '/../conexion/cone.php';
+require_once __DIR__ . '/../app/StrUtils.php';
 
   $id = $_GET['id'];
 
@@ -44,7 +45,7 @@ include('../conexion/cone.php');
  
        echo '<script>alert("DATOS INSERTADOS CORRECTAMENTE")</script> ';
  
-     echo "<script>location.href='index.php'</script>";
+     echo "<script>location.href='consulta_jefe_de_familia.php'</script>";
  
  
  

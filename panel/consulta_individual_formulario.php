@@ -20,7 +20,8 @@ if (isset($boton)) {
     if ($result->num_rows === 1) {
       $jefe = $result->fetch_assoc();
     } else {
-      $jefe = null;
+      echo "no se encontro la cedula";
+     // $jefe = null;
     }
   }
 }

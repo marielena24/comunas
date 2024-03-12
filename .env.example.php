@@ -7,5 +7,6 @@ return [
 	'DB_PASSWORD' => '<tu contraseña de base de datos>',
 	'DB_DATABASE' => '<tu nombre de base de datos>',
 	'DB_PORT' => 3306,
-	'DB_CHARSET' => 'utf8'
+	'DB_CHARSET' => 'utf8',
+  'MYSQLDUMP_PATH' => 'C:/xampp/mysql/bin/mysqldump.exe'
 ];

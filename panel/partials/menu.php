@@ -145,6 +145,14 @@
       <li>
         <a href="#">Servicios</a>
         <ul class="submenu">
+          <?php if ($idRol === ADMIN): ?>
+            <li>
+              <a href="./respaldo.php">Respaldar</a>
+            </li>
+            <li>
+              <a href="./restauracion.php">Restaurar</a>
+            </li>
+          <?php endif ?>
           <li>
             <a href="#">Ayuda</a>
           </li>

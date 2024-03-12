@@ -44,8 +44,18 @@ if (!$result) {
 }
 
 exit(<<<HTML
-<script>
-	alert('Usuario registrado exitósamente')
-	location.href = './'
-</script>
+<html>
+  <head>
+    <link rel="stylesheet" href="assets/libs/sweetalert2/default.min.css">
+  </head>
+  <body>
+    <script src="assets/libs/sweetalert2/sweetalert2.min.js"></script>
+    <script src="assets/js/swal.js"></script>
+    <script>
+      CenterNotySuccess.fire({
+        title: 'Usuario registrado exitósamente',
+      }).then(() => location.href = './')
+    </script>
+  </body>
+</html>
 HTML);

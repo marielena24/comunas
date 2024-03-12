@@ -21,8 +21,8 @@ exit(<<<HTML
     <script src="../assets/libs/sweetalert2/sweetalert2.min.js"></script>
     <script src="../assets/js/swal.js"></script>
     <script>
-      CenterNotyError.fire({
-        title: 'Datos incorrectos',
+      CenterNotySuccess.fire({
+        title: 'Base de datos respaldada exitósamente',
       }).then(() => location.href = './')
     </script>
   </body>
